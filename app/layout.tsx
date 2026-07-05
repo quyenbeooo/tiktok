@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -51,6 +52,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans`}>
+        {/* Popunder / background ad script */}
+        <Script
+          src="https://pl30220166.effectivecpmnetwork.com/16/ca/8a/16ca8a7f6210cd918aa9138c9618c6f7.js"
+          strategy="lazyOnload"
+        />
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>

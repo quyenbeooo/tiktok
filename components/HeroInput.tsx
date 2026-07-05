@@ -7,6 +7,7 @@ import type { AppState, LoadingStep, TikTokDownloadData } from "@/types";
 import LoadingState from "./LoadingState";
 import DownloadActions from "./DownloadActions";
 import Toast from "./Toast";
+import AdBanner from "./AdBanner";
 
 const LOADING_STEPS: LoadingStep[] = [
   "Đang lấy dữ liệu...",
@@ -179,6 +180,8 @@ export default function HeroInput() {
         <p className="mt-3 text-center text-xs text-muted/60">
           Hỗ trợ liên kết tiktok.com, vm.tiktok.com, vt.tiktok.com
         </p>
+
+        <AdBanner />
       </div>
 
       {/* Loading state */}
