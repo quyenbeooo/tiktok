@@ -16,9 +16,9 @@ const store = new Map<string, Bucket>();
 /** Prune expired entries periodically to limit memory growth. */
 function pruneExpired(now: number) {
   if (store.size < 500) return;
-  for (const [ip, bucket] of store) {
+  store.forEach((bucket, ip) => {
     if (now > bucket.resetAt) store.delete(ip);
-  }
+  });
 }
 
 export function getClientIp(request: Request): string {
